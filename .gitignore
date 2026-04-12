@@ -1,0 +1,6 @@
+node_modules/
+lobster-manual/.vitepress/dist
+lobster-manual/.vitepress/cache
+
+# Cursor / local IDE
+.cursor/
