@@ -31,3 +31,6 @@ features:
 5. [4.1 从零开始](/part4-usage/4.1-getting-started) — 开始部署与实践
 
 左侧边栏已按 **Part 0 → 附录** 排好顺序；合成版整稿 Markdown 仅用于线下审阅，不参与本站导航与构建。
+
+
+## test git setup - 20260412
