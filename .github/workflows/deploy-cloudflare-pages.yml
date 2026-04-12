@@ -1,0 +1,54 @@
+# Deploy static VitePress output to Cloudflare Pages (production).
+# Runs when `main` is updated — e.g. after merging a PR from `dev`.
+#
+# GitHub → repo Settings → Secrets and variables → Actions, add:
+#   CLOUDFLARE_API_TOKEN   — API Token with Account → Cloudflare Pages → Edit
+#   CLOUDFLARE_ACCOUNT_ID  — Account ID (Workers & Pages overview sidebar)
+#
+# Pages project slug defaults to the GitHub repository name. Override in the
+# deploy step command if your Cloudflare project name differs.
+#
+# If the repo is also connected to Cloudflare Git builds on `main`, you may get
+# two deploys per push; turn off Git-connected production builds in Cloudflare
+# if you want GitHub Actions to be the only deploy path.
+
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build VitePress
+        run: npm run docs:build
+        # Pages serves at site root — keep default base `/` (do not set VITEPRESS_BASE like GitHub Pages project sites).
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy lobster-manual/.vitepress/dist --project-name=${{ github.event.repository.name }}
