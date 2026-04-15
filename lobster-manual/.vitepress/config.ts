@@ -59,7 +59,7 @@ export default defineConfig({
           items: [
             { text: '1.1 龙虾是什么', link: '/part1-cognition/1.1-what-is-lobster' },
             { text: '1.2 为什么叫龙虾', link: '/part1-cognition/1.2-why-lobster' },
-            { text: '1.3 和豆包区别', link: '/part1-cognition/1.3-comparison' },
+            { text: '1.3 和chatgpt/豆包/deepseek等区别', link: '/part1-cognition/1.3-comparison' },
             { text: '1.4 为什么这么火', link: '/part1-cognition/1.4-why-popular' },
             { text: '1.5 有哪些公司在做', link: '/part1-cognition/1.5-companies' },
             { text: '1.6 哪些人在用', link: '/part1-cognition/1.6-users' },
