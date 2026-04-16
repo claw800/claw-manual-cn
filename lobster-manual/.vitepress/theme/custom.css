@@ -1,0 +1,6 @@
+.VPHero .tagline {
+  /* Force the hero tagline to stay on one line. */
+  white-space: nowrap !important;
+  max-width: 100% !important;
+}
+
