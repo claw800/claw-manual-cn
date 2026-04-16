@@ -1,3 +1,4 @@
+declare const process: { env: Record<string, string | undefined> }
 import { defineConfig } from 'vitepress'
 
 function vitePressBase(): string {
@@ -44,7 +45,7 @@ export default defineConfig({
     sidebar: {
       '/': [
         {
-          text: 'Part 0: 前置知识（入门必读）',
+          text: '前置知识（入门必读）',
           collapsed: false,
           items: [
             { text: '0.1 阅读指南', link: '/part0-intro/0.1-reading-guide' },
@@ -54,7 +55,7 @@ export default defineConfig({
           ],
         },
         {
-          text: 'Part 1: 认知篇（什么是龙虾）',
+          text: '一、认知篇（什么是龙虾）',
           collapsed: false,
           items: [
             { text: '1.1 龙虾是什么', link: '/part1-cognition/1.1-what-is-lobster' },
@@ -66,7 +67,7 @@ export default defineConfig({
           ],
         },
         {
-          text: 'Part 2: 价值篇（能干什么/值不值）',
+          text: '二、价值篇（能干什么/值不值）',
           collapsed: false,
           items: [
             { text: '2.1 能干什么活', link: '/part2-value/2.1-core-capabilities' },
@@ -78,7 +79,7 @@ export default defineConfig({
           ],
         },
         {
-          text: 'Part 3: 信任篇（安全/隐私/焦虑）',
+          text: '三、信任篇（安全/隐私/焦虑）',
           collapsed: false,
           items: [
             { text: '3.1 隐私安全', link: '/part3-trust/3.1-privacy-security' },
@@ -92,7 +93,7 @@ export default defineConfig({
           ],
         },
         {
-          text: 'Part 4: 使用篇（怎么用/怎么部署）',
+          text: '四、使用篇（怎么用/怎么部署）',
           collapsed: false,
           items: [
             { text: '4.1 从零开始', link: '/part4-usage/4.1-getting-started' },
@@ -106,7 +107,7 @@ export default defineConfig({
           ],
         },
         {
-          text: 'Part 5: 融合篇（多助理/生态）',
+          text: '五、融合篇（多助理/生态）',
           collapsed: false,
           items: [
             { text: '5.1 ClawTeam', link: '/part5-ecosystem/5.1-clawteam' },
