@@ -2,6 +2,8 @@
   /* Force the hero tagline to stay on one line. */
   white-space: nowrap !important;
   max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 @media (max-width: 640px) {
