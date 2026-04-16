@@ -3,7 +3,7 @@ layout: home
 
 hero:
  name: 《龙虾问答手册》V1.0
- tagline: 技术小白的 AI 助理入门指南 · Claw Mate — 你的数字伙伴
+ tagline: 技术小白的 AI 助理入门指南 / Claw Mate — 你的数字伙伴
  actions:
   - theme: brand
     text: 阅读指南（从这里开始）
